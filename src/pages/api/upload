@@ -1,0 +1,23 @@
+import formidable from "formidable"
+import { fields } from "formidable"
+
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method not allowed" })
+  }
+
+  const form = formidable({ multiples: true })
+  form.parse(req, async (err, fields, files) => {
+    if (err) {
+      console.error(err)
+      return res.status(500).json({ message: "Server error" })
+    }
+
+    const file = files.file
+    const filePath = `/uploads/${file.name}`
+
+    await fs.promises.rename(file.path, `.${filePath}`)
+
+    res.status(200).json({ message: "File uploaded successfully" })
+  })
+}
