@@ -19,13 +19,25 @@ button.square {
   padding: 0;
 }
 
+.blur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  width: 100%;
+  height: 100vh;
+}
+
 .status {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   color: white;
 }
 
 .container {
-  background-color: hsl(268, 37%, 37%);
+  background: url("../../images/background.jpg");
+  background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
