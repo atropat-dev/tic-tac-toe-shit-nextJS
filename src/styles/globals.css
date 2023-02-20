@@ -6,14 +6,23 @@ button.square {
   font-size: 2rem;
   line-height: 0;
   border: none;
-  border-radius: 1px;
-  box-shadow: 5px 5px 15px 1px rgba(68, 37, 75, 0.311);
+  border-radius: 2px;
+  box-shadow: 5px 8px 25px 1px rgba(44, 30, 49, 0.44);
   width: 4rem;
   height: 4rem;
   max-height: 4rem;
   margin: 0.8rem;
-  color: rgb(62, 26, 77);
+  color: rgba(255, 255, 255, 0.822);
+  cursor: pointer;
+  background-color: rgba(69, 36, 88, 0.232);
+  transition: background 0.6s ease-out;
 }
+
+button.square:active {
+  background: rgba(159, 159, 159, 0.174);
+  transition: width 0s, height 0s;
+}
+
 .board-row {
   margin: 0;
   padding: 0;
@@ -24,7 +33,7 @@ button.square {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(50px);
   width: 100%;
   height: 100vh;
 }
@@ -32,7 +41,7 @@ button.square {
 .status {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.926);
 }
 
 .container {
